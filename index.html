@@ -1072,48 +1072,50 @@
     </div>
     
     <script>
-        // Dati delle 32 personalità con link Drive
+        // Dati delle 32 personalità con immagini da GitHub
         const personalities = [
-            { type: "ENFJ-A", name: "Il Mentore Magnetico", imageId: "1CpP7u2n6H2pl_I1SswPtdQ0iRAxN6O8D" },
-            { type: "ENFJ-T", name: "Il Salvatore Esaurito", imageId: "1bs3QmNVCXzQx1arfThDdx9FqK5_RmeJy" },
-            { type: "ENFP-A", name: "Il Camaleonte Visionario", imageId: "19HX4OQ-OAvmTxBEtw4H9VE2tLQzJX_oc" },
-            { type: "ENFP-T", name: "Il Vulcano Creativo in Burnout", imageId: "1PNbuDye3YzVQemhOtcU_6ljDwRH7u9W7" },
-            { type: "ENTJ-A", name: "L'Imperatore Spietato", imageId: "1uO3Q598ZvC-MZdIZH2DHPbqnVFddlNtQ" },
-            { type: "ENTJ-T", name: "Il Generale Ansioso", imageId: "1qHnK8uLATRHlotYGSm58MQBZaVOz_sFn" },
-            { type: "ENTP-A", name: "L'Innovatore Provocatore", imageId: "1MF_RAqqy8XIZrpZH-Gh-m6jReW_AaF3-" },
-            { type: "ENTP-T", name: "Il Caos Creativo Disperso", imageId: "1JYFpP1Ob0DJ5ywCmOBdTQIZaux-4rYt3" },
-            { type: "ESFJ-A", name: "Il Collante Sociale", imageId: "14hwVB25MIDJ9hE69T-krBzSSUXu66vI6" },
-            { type: "ESFJ-T", name: "Il People Pleaser Prosciugato", imageId: "1V080vYJEXsoOGXUKRkFiFg63BWx2v1rG" },
-            { type: "ESFP-A", name: "La Gioia Incarnata", imageId: "1Yrpue6YoICtsB73pOINBlm-vtJRDpR6k" },
-            { type: "ESFP-T", name: "La Festa che Crolla", imageId: "1p2v7q4o5pb1IJKDJWt2zJpZkUnE4j7Eb" },
-            { type: "ESTJ-A", name: "Il CEO Inarrestabile", imageId: "1cd3QXM7-fZjkGhOHhWLpadrcnRolUggn" },
-            { type: "ESTJ-T", name: "Il Sergente Stressato", imageId: "1RpeOBrs7TJQL5wh7Vgvbqhz6N9B8vzPC" },
-            { type: "ESTP-A", name: "L'Adrenalina Fluida", imageId: "1yta_OXYIbL2XUexUzsmpxjuMAvKjgV9a" },
-            { type: "ESTP-T", name: "L'Adrenalina Junkie Insicura", imageId: "123omC6BBSTmmTkK6Fee0baX9TcCDEWpn" },
-            { type: "INFJ-A", name: "Il Poeta Mistico Silenzioso", imageId: "1nh7C-IoXZGVyjVdoBxaEHfwrPISkmwWQ" },
-            { type: "INFJ-T", name: "Lo Sciamano Bloccato", imageId: "1GgqX6TOCCo9NhKlEivPEtjYMUuqZ1ZOh" },
-            { type: "INFP-A", name: "L'Idealista Sognatore Radicale", imageId: "1AXHHGBEnzwT_OGh-YfWrIZQtxzQY6G1N" },
-            { type: "INFP-T", name: "La Fiamma che Crolla", imageId: "108BBOIjXpVjd7uCzpiJn3V4QZ38yPYXA" },
-            { type: "INTJ-A", name: "Il Mastermind Implacabile", imageId: "13g2zuRit0TqYL_M047Xs-CPPUxwhmPpF" },
-            { type: "INTJ-T", name: "L'Architetto Paralizzato", imageId: "1qnlzIXbTP8SWEpplj7DJtqdiKKhDrQaR" },
-            { type: "INTP-A", name: "Il Genio Tecnico Freddo", imageId: "1wCjue_0XsLOwmk4UWbekKS7J-S5y7lD9" },
-            { type: "INTP-T", name: "Lo Scienziato Pazzo Ansioso", imageId: "1201kYsqEOd4iDdLox6rvCQgrlQAv86qB" },
-            { type: "ISFJ-A", name: "La Roccia", imageId: "1uGLecoyQhgTVSQ-CG6umA4wlfvVlXlQU" },
-            { type: "ISFJ-T", name: "Il Doormat Invisibile", imageId: "1ooK1XP8O3IBP_ivwFF6PjFSHHCLNAZHa" },
-            { type: "ISFP-A", name: "L'Eremita", imageId: "1VkEVdmGj5rIDYV07ZALQ2XJuQFZNv5qS" },
-            { type: "ISFP-T", name: "La Farfalla Schiacciata", imageId: "1IDqJjJGIo_h9GkV0apXZ98qheTUeaxBa" },
-            { type: "ISTJ-A", name: "La Macchina da Guerra Affidabile", imageId: "1fWMEscDR_Itf1G0MdtJw9L2IMen4rZex" },
-            { type: "ISTJ-T", name: "Il Robot Perfezionista", imageId: "1MnhKKAu_xKYmli2EqaHwns1EQTmqL9KB" },
-            { type: "ISTP-A", name: "Il Virtuoso Stoico", imageId: "1AkFkz6JlE4W6WeBGqa7y2vbnPZute1Md" },
-            { type: "ISTP-T", name: "L'Artigiano Solitario Tormentato dalla Paura", imageId: "1nQ5GTA1p_GviKWJwh6SQDVoOzhXgCafr" }
+            { type: "ENFJ-A", name: "Il Mentore Magnetico", imageFile: "ENFJ-A: Il Mentore Magnetico.png" },
+            { type: "ENFJ-T", name: "Il Salvatore Esaurito", imageFile: "ENFJ-T: Il Salvatore Esaurito.png" },
+            { type: "ENFP-A", name: "Il Camaleonte Visionario", imageFile: "ENFP-A: Il Camaleonte Visionario.png" },
+            { type: "ENFP-T", name: "Il Vulcano Creativo in Burnout", imageFile: "ENFP-T: Il Vulcano Creativo in Burnout.png" },
+            { type: "ENTJ-A", name: "L'Imperatore Spietato", imageFile: "ENTJ-A: L'Imperatore Spietato.png" },
+            { type: "ENTJ-T", name: "Il Generale Ansioso", imageFile: "ENTJ-T: Il Generale Ansioso.png" },
+            { type: "ENTP-A", name: "L'Innovatore Provocatore", imageFile: "ENTP-A: L'Innovatore Provocatore.png" },
+            { type: "ENTP-T", name: "Il Caos Creativo Disperso", imageFile: "ENTP-T: Il Caos Creativo Disperso.png" },
+            { type: "ESFJ-A", name: "Il Collante Sociale", imageFile: "ESFJ-A: Il Collante Sociale.png" },
+            { type: "ESFJ-T", name: "Il People Pleaser Prosciugato", imageFile: "ESFJ-T: Il People Pleaser Prosciugato.png" },
+            { type: "ESFP-A", name: "La Gioia Incarnata", imageFile: "ESFP-A: La Gioia Incarnata.png" },
+            { type: "ESFP-T", name: "La Festa che Crolla", imageFile: "ESFP-T: La Festa che Crolla.png" },
+            { type: "ESTJ-A", name: "Il CEO Inarrestabile", imageFile: "ESTJ-A: Il CEO Inarrestabile.png" },
+            { type: "ESTJ-T", name: "Il Sergente Stressato", imageFile: "ESTJ-T: Il Sergente Stressato.png" },
+            { type: "ESTP-A", name: "Il Performer Senza Paura", imageFile: "ESTP-A: Il Performer Senza Paura.png" },
+            { type: "ESTP-T", name: "L'Adrenalina Junkie Instabile", imageFile: "ESTP-T: L'Adrenalina Junkie Instabile.png" },
+            { type: "INFJ-A", name: "Il Visionario Silenzioso", imageFile: "INFJ-A: Il Visionario Silenzioso.png" },
+            { type: "INFJ-T", name: "Il Poeta Mistico Sensibile", imageFile: "INFJ-T: Il Poeta Mistico Sensibile.png" },
+            { type: "INFP-A", name: "Il Sognatore Radicale", imageFile: "INFP-A: Il Sognatore Radicale.png" },
+            { type: "INFP-T", name: "L'Idealista Paralizzato", imageFile: "INFP-T: L'Idealista Paralizzato.png" },
+            { type: "INTJ-A", name: "Il Mastermind Implacabile", imageFile: "INTJ-A: Il Mastermind Implacabile.png" },
+            { type: "INTJ-T", name: "L'Architetto Paralizzato", imageFile: "INTJ-T: L'Architetto Paralizzato.png" },
+            { type: "INTP-A", name: "Il Genio Tecnico Freddo", imageFile: "INTP-A: Il Genio Tecnico Freddo.png" },
+            { type: "INTP-T", name: "Lo Scienziato Pazzo Bloccato", imageFile: "INTP-T: Lo Scienziato Pazzo Bloccato.png" },
+            { type: "ISFJ-A", name: "La Roccia Silenziosa", imageFile: "ISFJ-A: La Roccia Silenziosa.png" },
+            { type: "ISFJ-T", name: "Il Doormat Invisibile", imageFile: "ISFJ-T: Il Doormat Invisibile.png" },
+            { type: "ISFP-A", name: "Il Creatore Fluido", imageFile: "ISFP-A: Il Creatore Fluido.png" },
+            { type: "ISFP-T", name: "L'Artista Ipersensibile", imageFile: "ISFP-T: L'Artista Ipersensibile.png" },
+            { type: "ISTJ-A", name: "La Macchina da Guerra Affidabile", imageFile: "ISTJ-A: La Macchina da Guerra Affidabile.png" },
+            { type: "ISTJ-T", name: "Il Robot Perfezionista", imageFile: "ISTJ-T: Il Robot Perfezionista.png" },
+            { type: "ISTP-A", name: "Il Virtuoso Stoico", imageFile: "ISTP-A: Il Virtuoso Stoico.png" },
+            { type: "ISTP-T", name: "L'Eremita Tecnico", imageFile: "ISTP-T: L'Eremita Tecnico.png" }
         ];
         
         // Genera gallery slider (duplica per effetto infinito)
         function generateGallery() {
             const slider = document.getElementById('gallerySlider');
+            const baseUrl = 'https://canzonify.github.io/canzonifyTest/';
+            
             const cards = personalities.map(p => `
-                <div class="personality-card" onclick="openModal('${p.type}', '${p.name}', '${p.imageId}')">
-                    <img src="https://drive.google.com/uc?export=view&id=${p.imageId}" 
+                <div class="personality-card" onclick="openModal('${p.type}', '${p.name}', '${encodeURIComponent(p.imageFile)}')">
+                    <img src="${baseUrl}${encodeURIComponent(p.imageFile)}" 
                          alt="${p.name}" 
                          class="personality-img"
                          loading="lazy">
@@ -1127,11 +1129,13 @@
         }
         
         // Modal
-        function openModal(type, name, imageId) {
+        function openModal(type, name, imageFile) {
             const modal = document.getElementById('personalityModal');
+            const baseUrl = 'https://canzonify.github.io/canzonifyTest/';
+            
             document.getElementById('modalType').textContent = type;
             document.getElementById('modalName').textContent = name;
-            document.getElementById('modalImg').src = `https://drive.google.com/uc?export=view&id=${imageId}`;
+            document.getElementById('modalImg').src = baseUrl + decodeURIComponent(imageFile);
             document.getElementById('modalImg').alt = name;
             modal.classList.add('active');
             document.body.style.overflow = 'hidden';

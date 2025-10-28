@@ -4,12 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CanzoniFy - Scopri la Tua Personalità Artistica</title>
-    <meta name="description" content="Non tutti gli artisti sono uguali. Scopri la tua personalità artistica in 7 minuti.">
+    
+    <!-- Meta Tags per SEO e Social Share -->
+    <meta name="description" content="Scopri la tua identità artistica unica. 32 personalità musicali basate su MBTI. Test gratuito di 7 minuti con report personalizzato via email.">
+    <meta name="keywords" content="personalità artistica, MBTI musicale, test artisti, identità musicale, CanzoniFy">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://canzonify.github.io/canzonifyTest/">
+    <meta property="og:title" content="CanzoniFy - Scopri la Tua Personalità Artistica">
+    <meta property="og:description" content="Ogni artista ha un'impronta sonora unica. Scopri la tua in 7 minuti.">
+    <meta property="og:image" content="https://drive.google.com/uc?export=view&id=1CpP7u2n6H2pl_I1SswPtdQ0iRAxN6O8D">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://canzonify.github.io/canzonifyTest/">
+    <meta property="twitter:title" content="CanzoniFy - Scopri la Tua Personalità Artistica">
+    <meta property="twitter:description" content="Ogni artista ha un'impronta sonora unica. Scopri la tua in 7 minuti.">
+    <meta property="twitter:image" content="https://drive.google.com/uc?export=view&id=1CpP7u2n6H2pl_I1SswPtdQ0iRAxN6O8D">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="logo.png">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     
     <style>
         * {
@@ -18,163 +38,27 @@
             box-sizing: border-box;
         }
         
+        :root {
+            --primary: #aa4df7;
+            --secondary: #f0cb01;
+            --white: #ffffff;
+            --dark: #1a1a2e;
+            --gray: #6b7280;
+            --light-gray: #f3f4f6;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: linear-gradient(135deg, #aa4df7 0%, #8a2be2 50%, #aa4df7 100%);
-            min-height: 100vh;
-            color: white;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, var(--primary) 0%, #764ba2 100%);
+            color: var(--white);
             overflow-x: hidden;
         }
         
-        /* Animated background */
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: 
-                radial-gradient(circle at 20% 50%, rgba(240, 203, 1, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 80%, rgba(240, 203, 1, 0.08) 0%, transparent 50%);
-            pointer-events: none;
-            z-index: 0;
-        }
-        
-        .container {
-            position: relative;
-            z-index: 1;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        
-        /* Header */
-        header {
-            text-align: center;
-            padding: 40px 20px 60px;
-        }
-        
-        .logo {
-            width: 180px;
-            height: auto;
-            margin-bottom: 40px;
-            filter: drop-shadow(0 4px 20px rgba(0,0,0,0.2));
-            animation: fadeInDown 0.8s ease-out;
-        }
-        
-        /* Hero Section */
-        .hero {
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto 60px;
-            animation: fadeInUp 0.8s ease-out 0.2s both;
-        }
-        
-        .hero h1 {
-            font-size: clamp(2rem, 5vw, 3.5rem);
-            font-weight: 800;
-            margin-bottom: 30px;
-            line-height: 1.2;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
-        }
-        
-        .hero .tagline {
-            font-size: clamp(1.1rem, 2.5vw, 1.4rem);
-            line-height: 1.6;
-            margin-bottom: 20px;
-            opacity: 0.95;
-            font-weight: 400;
-        }
-        
-        .hero .cta-text {
-            font-size: clamp(1rem, 2.5vw, 1.3rem);
-            font-weight: 600;
-            margin-bottom: 40px;
-            color: #f0cb01;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
-        }
-        
-        /* Benefits */
-        .benefits {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            flex-wrap: wrap;
-            margin-bottom: 50px;
-            animation: fadeInUp 0.8s ease-out 0.4s both;
-        }
-        
-        .benefit {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 1rem;
-            font-weight: 500;
-            background: rgba(255,255,255,0.1);
-            backdrop-filter: blur(10px);
-            padding: 12px 24px;
-            border-radius: 30px;
-            border: 1px solid rgba(255,255,255,0.2);
-            transition: all 0.3s ease;
-        }
-        
-        .benefit:hover {
-            background: rgba(255,255,255,0.15);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-        }
-        
-        /* Form Container */
-        .form-container {
-            background: white;
-            border-radius: 24px;
-            padding: 0;
-            max-width: 800px;
-            margin: 0 auto 60px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-            overflow: hidden;
-            animation: fadeInUp 0.8s ease-out 0.6s both;
-        }
-        
-        /* Google Form Iframe */
-        .form-container iframe {
-            border: none;
-            width: 100%;
-            min-height: 2000px;
-            display: block;
-        }
-        
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 40px 20px;
-            font-size: 0.9rem;
-            opacity: 0.8;
-        }
-        
-        footer a {
-            color: #f0cb01;
-            text-decoration: none;
-            transition: opacity 0.3s ease;
-        }
-        
-        footer a:hover {
-            opacity: 0.8;
-        }
-        
-        /* Animations */
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
+        /* Animazioni */
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -186,79 +70,1155 @@
             }
         }
         
-        /* Responsive */
-        @media (max-width: 768px) {
-            header {
-                padding: 30px 20px 40px;
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
             }
-            
-            .logo {
-                width: 140px;
-                margin-bottom: 30px;
-            }
-            
-            .benefits {
-                flex-direction: column;
-                align-items: center;
-                gap: 15px;
-            }
-            
-            .benefit {
-                width: 100%;
-                max-width: 300px;
-                justify-content: center;
-            }
-            
-            .form-container {
-                border-radius: 16px;
-                margin: 0 -20px 40px;
+            50% {
+                transform: translateY(-20px);
             }
         }
         
-        /* Hide Google Form branding */
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.5;
+            }
+        }
+        
+        .fade-in {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+        
+        /* Particle Effects */
+        .particles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            pointer-events: none;
+        }
+        
+        .particle {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: var(--secondary);
+            border-radius: 50%;
+            opacity: 0.3;
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        /* Hero Section */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 60px 20px;
+            text-align: center;
+            overflow: hidden;
+        }
+        
+        .logo-container {
+            margin-bottom: 40px;
+            animation: fadeInUp 0.8s ease-out;
+        }
+        
+        .logo {
+            width: 200px;
+            height: auto;
+            filter: drop-shadow(0 10px 30px rgba(0,0,0,0.3));
+        }
+        
+        .hero-content {
+            max-width: 900px;
+            z-index: 2;
+        }
+        
+        h1 {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 800;
+            margin-bottom: 30px;
+            line-height: 1.1;
+            text-shadow: 2px 4px 8px rgba(0,0,0,0.3);
+            animation: fadeInUp 0.8s ease-out 0.2s backwards;
+        }
+        
+        .hero-subtitle {
+            font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+            line-height: 1.6;
+            margin-bottom: 40px;
+            opacity: 0.95;
+            animation: fadeInUp 0.8s ease-out 0.4s backwards;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: var(--secondary);
+            color: var(--dark);
+            padding: 20px 50px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            border-radius: 50px;
+            text-decoration: none;
+            box-shadow: 0 10px 30px rgba(240, 203, 1, 0.4);
+            transition: all 0.3s ease;
+            animation: fadeInUp 0.8s ease-out 0.6s backwards;
+            cursor: pointer;
+            border: none;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(240, 203, 1, 0.6);
+        }
+        
+        .scroll-indicator {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: pulse 2s ease-in-out infinite;
+        }
+        
+        .scroll-indicator svg {
+            width: 30px;
+            height: 30px;
+            fill: var(--white);
+        }
+        
+        /* Section Generica */
+        .section {
+            padding: 100px 20px;
+            position: relative;
+        }
+        
+        .section-white {
+            background: var(--white);
+            color: var(--dark);
+        }
+        
+        .section-light {
+            background: var(--light-gray);
+            color: var(--dark);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .section-subtitle {
+            font-size: clamp(1rem, 2vw, 1.3rem);
+            text-align: center;
+            margin-bottom: 60px;
+            opacity: 0.8;
+        }
+        
+        /* Gallery Personalità */
+        .gallery-section {
+            background: linear-gradient(135deg, #764ba2 0%, var(--primary) 100%);
+            padding: 100px 20px;
+        }
+        
+        .gallery-container {
+            overflow: hidden;
+            position: relative;
+            margin-top: 60px;
+        }
+        
+        .gallery-slider {
+            display: flex;
+            gap: 30px;
+            animation: scroll 60s linear infinite;
+            width: max-content;
+        }
+        
+        .gallery-slider:hover {
+            animation-play-state: paused;
+        }
+        
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+        
+        .personality-card {
+            flex-shrink: 0;
+            width: 250px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 20px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 2px solid transparent;
+        }
+        
+        .personality-card:hover {
+            transform: translateY(-10px) scale(1.05);
+            border-color: var(--secondary);
+            box-shadow: 0 20px 40px rgba(240, 203, 1, 0.3);
+        }
+        
+        .personality-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 15px;
+            margin-bottom: 15px;
+        }
+        
+        .personality-name {
+            font-size: 1.1rem;
+            font-weight: 700;
+            text-align: center;
+            color: var(--white);
+        }
+        
+        .personality-type {
+            font-size: 0.9rem;
+            text-align: center;
+            color: var(--secondary);
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+        
+        /* Trust Section */
+        .trust-section {
+            background: var(--white);
+            color: var(--dark);
+        }
+        
+        .trust-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .trust-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+        }
+        
+        .disclaimer {
+            background: var(--light-gray);
+            padding: 30px;
+            border-radius: 15px;
+            border-left: 5px solid var(--primary);
+            margin-top: 40px;
+            text-align: left;
+        }
+        
+        .disclaimer strong {
+            color: var(--primary);
+        }
+        
+        /* How It Works */
+        .steps-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 60px;
+            margin-top: 60px;
+        }
+        
+        .step {
+            text-align: center;
+            position: relative;
+        }
+        
+        .step-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+        
+        .step-number {
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--secondary);
+            color: var(--dark);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 1.5rem;
+        }
+        
+        .step h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+        
+        .step p {
+            color: var(--gray);
+            line-height: 1.6;
+        }
+        
+        /* Benefits */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+        
+        .benefit-card {
+            background: var(--white);
+            padding: 40px 30px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(170, 77, 247, 0.2);
+        }
+        
+        .benefit-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+        
+        .benefit-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+        
+        .benefit-card p {
+            color: var(--gray);
+            line-height: 1.6;
+        }
+        
+        /* FAQ */
+        .faq-container {
+            max-width: 800px;
+            margin: 60px auto 0;
+        }
+        
+        .faq-item {
+            background: var(--white);
+            margin-bottom: 20px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .faq-question {
+            padding: 25px 30px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: var(--dark);
+            transition: background 0.3s ease;
+        }
+        
+        .faq-question:hover {
+            background: var(--light-gray);
+        }
+        
+        .faq-icon {
+            font-size: 1.5rem;
+            color: var(--primary);
+            transition: transform 0.3s ease;
+        }
+        
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+        }
+        
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            padding: 0 30px;
+            color: var(--gray);
+            line-height: 1.8;
+        }
+        
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            padding: 0 30px 25px;
+        }
+        
+        /* About Section */
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .about-content p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            opacity: 0.9;
+        }
+        
+        .about-cta {
+            display: inline-block;
+            color: var(--secondary);
+            font-weight: 700;
+            text-decoration: none;
+            font-size: 1.2rem;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .about-cta:hover {
+            transform: translateX(10px);
+        }
+        
+        /* Form Section */
+        .form-section {
+            background: var(--white);
+            padding: 100px 20px;
+        }
+        
+        .form-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--white);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+        }
+        
         .form-container iframe {
-            /* Remove extra padding from Google Forms */
+            border: none;
+            width: 100%;
+            min-height: 1000px;
+        }
+        
+        /* Footer */
+        .footer {
+            background: var(--dark);
+            padding: 60px 20px 30px;
+            color: var(--white);
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-section h3 {
+            color: var(--secondary);
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: var(--white);
+            text-decoration: none;
+            opacity: 0.8;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            opacity: 1;
+            color: var(--secondary);
+            transform: translateX(5px);
+            display: inline-block;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-link {
+            width: 45px;
+            height: 45px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .social-link:hover {
+            background: var(--secondary);
+            color: var(--dark);
+            transform: translateY(-5px);
+        }
+        
+        .trust-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .badge {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            opacity: 0.7;
+        }
+        
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            animation: fadeIn 0.3s ease-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .modal-content {
+            background: var(--white);
+            padding: 50px;
+            border-radius: 30px;
+            max-width: 600px;
+            margin: 20px;
+            position: relative;
+            animation: slideUp 0.3s ease-out;
+        }
+        
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 2rem;
+            cursor: pointer;
+            color: var(--gray);
+            transition: color 0.3s ease;
+            background: none;
+            border: none;
+        }
+        
+        .modal-close:hover {
+            color: var(--primary);
+        }
+        
+        .modal-img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 20px;
+            margin: 0 auto 20px;
+            display: block;
+        }
+        
+        .modal-type {
+            color: var(--secondary);
+            font-weight: 700;
+            font-size: 1.2rem;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        
+        .modal-name {
+            color: var(--primary);
+            font-size: 2rem;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .modal-cta {
+            text-align: center;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .section {
+                padding: 60px 20px;
+            }
+            
+            .steps-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .social-links {
+                justify-content: center;
+            }
+            
+            .trust-badges {
+                justify-content: center;
+            }
+            
+            .personality-card {
+                width: 200px;
+            }
+            
+            .modal-content {
+                padding: 30px;
+            }
+        }
+        
+        /* Scroll Animations */
+        .scroll-fade {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        
+        .scroll-fade.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="particles" id="particles"></div>
+        
+        <div class="logo-container">
             <img src="logo.png" alt="CanzoniFy Logo" class="logo">
-        </header>
-        
-        <section class="hero">
-            <h1>🎵 Non Tutti gli Artisti Sono Uguali</h1>
-            
-            <p class="tagline">
-                C'è chi crea da solo, chi guida il gruppo,<br>
-                chi si nutre della folla.
-            </p>
-            
-            <p class="cta-text">
-                Scopri la tua personalità artistica in 7 minuti.
-            </p>
-            
-            <div class="benefits">
-                <div class="benefit">
-                    ✨ Scopri i tuoi punti di forza unici
-                </div>
-                <div class="benefit">
-                    🎯 Lavora con strategia, non a caso
-                </div>
-                <div class="benefit">
-                    📧 Report personalizzato via email
-                </div>
-            </div>
-        </section>
-        
-        <div class="form-container">
-            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSchl7KWqJJaiG-DORB0msKEl3xGxv845eT3kfVjVV6NKsWbNw/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0">Caricamento…</iframe>
         </div>
         
-        <footer>
-            <p>© 2025 CanzoniFy • Scopri la tua identità artistica</p>
-        </footer>
+        <div class="hero-content">
+            <h1>🎵 Ogni Artista Ha Un'Impronta Sonora Unica</h1>
+            
+            <div class="hero-subtitle">
+                <p>C'è chi scrive canzoni alle 3 del mattino, da solo.<br>
+                E c'è chi non riesce a creare senza qualcuno accanto.</p>
+                
+                <p>Chi ama il palco, chi preferisce lo studio.<br>
+                Chi improvvisa, chi pianifica ogni nota.</p>
+                
+                <p><strong>La tua impronta non è uguale a nessun'altra.</strong></p>
+                
+                <p>Ma... la conosci davvero?</p>
+            </div>
+            
+            <a href="#form" class="cta-button">Scopri chi sei in 7 minuti →</a>
+        </div>
+        
+        <div class="scroll-indicator">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z" transform="rotate(90 12 12)"/>
+            </svg>
+        </div>
+    </section>
+    
+    <!-- Gallery Personalità -->
+    <section class="gallery-section">
+        <div class="container">
+            <h2 class="section-title scroll-fade">Quale Di Queste Sei Tu?</h2>
+            <p class="section-subtitle scroll-fade">32 identità artistiche uniche. Scopri la tua.</p>
+        </div>
+        
+        <div class="gallery-container">
+            <div class="gallery-slider" id="gallerySlider">
+                <!-- Le personalità verranno generate da JavaScript -->
+            </div>
+        </div>
+    </section>
+    
+    <!-- Trust Section -->
+    <section class="section trust-section">
+        <div class="container">
+            <div class="trust-content scroll-fade">
+                <div class="trust-icon">🧠</div>
+                <h2 class="section-title">Basato su Scienza e Esperienza</h2>
+                
+                <p style="font-size: 1.2rem; line-height: 1.8; margin-bottom: 30px;">
+                    Questo test è il risultato di <strong>mesi di studio intensivo</strong> su:
+                </p>
+                
+                <div style="text-align: left; max-width: 600px; margin: 0 auto 40px;">
+                    <ul style="list-style: none; font-size: 1.1rem; line-height: 2;">
+                        <li>✅ <strong>Framework MBTI</strong> (Myers-Briggs Type Indicator)</li>
+                        <li>✅ <strong>Test 16 Personalities</strong></li>
+                        <li>✅ <strong>Analisi delle identità artistiche</strong> nel mondo della musica</li>
+                    </ul>
+                </div>
+                
+                <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 40px;">
+                    Abbiamo adattato questi framework psicologici al contesto specifico degli <strong>artisti e creativi</strong>.
+                </p>
+                
+                <div class="disclaimer">
+                    <p><strong>⚠️ Disclaimer:</strong> Questo test non ha scopi clinici o diagnostici. È uno strumento creativo per aiutarti a capire meglio il tuo stile artistico e il tuo approccio alla musica.</p>
+                    <p style="margin-top: 15px;">Creato con passione da <strong>Ari & Rob</strong> per la community di CanzoniFy.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Come Funziona -->
+    <section class="section section-light">
+        <div class="container">
+            <h2 class="section-title scroll-fade">Come Funziona</h2>
+            <p class="section-subtitle scroll-fade">Tre semplici step per scoprire la tua identità artistica</p>
+            
+            <div class="steps-container">
+                <div class="step scroll-fade">
+                    <div class="step-number">1</div>
+                    <div class="step-icon">📝</div>
+                    <h3>Rispondi a 32 Domande</h3>
+                    <p>Solo 7 minuti per scoprire chi sei davvero. Domande intuitive sul tuo processo creativo.</p>
+                </div>
+                
+                <div class="step scroll-fade">
+                    <div class="step-number">2</div>
+                    <div class="step-icon">🧠</div>
+                    <h3>Scopri Il Tuo Tipo Unico</h3>
+                    <p>Il nostro sistema identifica la tua personalità tra le 32 identità artistiche basate su MBTI.</p>
+                </div>
+                
+                <div class="step scroll-fade">
+                    <div class="step-number">3</div>
+                    <div class="step-icon">📧</div>
+                    <h3>Ricevi Il Report Personalizzato</h3>
+                    <p>Report dettagliato via email in meno di 30 secondi con i tuoi punti di forza e consigli pratici.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Benefits -->
+    <section class="section section-light">
+        <div class="container">
+            <h2 class="section-title scroll-fade">Perché Dovresti Farlo</h2>
+            <p class="section-subtitle scroll-fade">Scopri i vantaggi di conoscere la tua identità artistica</p>
+            
+            <div class="benefits-grid">
+                <div class="benefit-card scroll-fade">
+                    <span class="benefit-icon">✨</span>
+                    <h3>Scopri i Tuoi Superpoteri Nascosti</h3>
+                    <p>Identifica i tuoi punti di forza unici e impara a sfruttarli al massimo nella tua carriera musicale.</p>
+                </div>
+                
+                <div class="benefit-card scroll-fade">
+                    <span class="benefit-icon">🎯</span>
+                    <h3>Lavora con Strategia, Non a Caso</h3>
+                    <p>Smetti di provare tutto. Focalizzati su ciò che funziona davvero per la tua personalità.</p>
+                </div>
+                
+                <div class="benefit-card scroll-fade">
+                    <span class="benefit-icon">🤝</span>
+                    <h3>Collabora Meglio con Altri Artisti</h3>
+                    <p>Capisci le dinamiche di gruppo e come interagire efficacemente con altre personalità creative.</p>
+                </div>
+                
+                <div class="benefit-card scroll-fade">
+                    <span class="benefit-icon">💡</span>
+                    <h3>Sblocca Il Tuo Vero Potenziale</h3>
+                    <p>Rimuovi i blocchi creativi capendo come funziona il tuo processo artistico unico.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- FAQ -->
+    <section class="section section-white">
+        <div class="container">
+            <h2 class="section-title scroll-fade">Domande Frequenti</h2>
+            <p class="section-subtitle scroll-fade">Tutto quello che devi sapere sul test</p>
+            
+            <div class="faq-container">
+                <div class="faq-item scroll-fade">
+                    <div class="faq-question">
+                        <span>Su cosa si basa questo test?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Abbiamo studiato per mesi i framework MBTI e 16 Personalities, adattandoli al mondo artistico e musicale. È uno strumento pensato per aiutarti a capire il tuo stile creativo, non un test clinico.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item scroll-fade">
+                    <div class="faq-question">
+                        <span>È scientificamente valido?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Il test si basa su framework psicologici riconosciuti (MBTI), ma è stato adattato per scopi creativi. Non ha valore diagnostico o clinico, ma può darti insights preziosi sul tuo approccio alla musica.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item scroll-fade">
+                    <div class="faq-question">
+                        <span>Quanto tempo ci vuole?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Solo 7 minuti. 32 domande intuitive per scoprire la tua identità artistica. Il tempo vola quando le domande sono interessanti!</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item scroll-fade">
+                    <div class="faq-question">
+                        <span>È davvero gratuito?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Sì, totalmente gratuito. Il test e il report personalizzato via email non costano nulla. Nessuna carta di credito richiesta, zero costi nascosti.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item scroll-fade">
+                    <div class="faq-question">
+                        <span>Cosa riceverò via email?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Un report dettagliato con la tua personalità artistica, i tuoi punti di forza unici, e consigli pratici su come sfruttarli nella tua carriera musicale. Include anche suggerimenti su come collaborare con altre personalità.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item scroll-fade">
+                    <div class="faq-question">
+                        <span>I miei dati sono al sicuro?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Assolutamente. I tuoi dati personali (nome, email, risposte) rimangono privati al 100%. Usiamo i tuoi dati solo per inviarti il report. Zero spam, zero vendita a terzi. Possiamo utilizzare solo i risultati aggregati e anonimi per ricerca e miglioramento del test. <a href="privacy.html" style="color: var(--primary);">Leggi la Privacy Policy completa</a>.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item scroll-fade">
+                    <div class="faq-question">
+                        <span>Posso rifare il test?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Sì! Puoi rifarlo quando vuoi. La tua personalità artistica può evolversi nel tempo man mano che cresci come artista. È interessante vedere come cambia il tuo profilo.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Chi Siamo -->
+    <section class="section" style="background: linear-gradient(135deg, var(--primary) 0%, #764ba2 100%);">
+        <div class="container">
+            <div class="about-content scroll-fade">
+                <h2 class="section-title">🎵 Creato da Artisti, per Artisti</h2>
+                
+                <p>Ari e Rob di <strong>CanzoniFy</strong> hanno vissuto sulla propria pelle la frustrazione di non sapere come valorizzare la propria unicità nel mondo della musica.</p>
+                
+                <p>Dopo mesi di studio su psicologia, creatività e identità artistiche, hanno creato questo test per aiutare altri artisti a scoprire (e abbracciare) chi sono davvero.</p>
+                
+                <p><strong>Perché ogni artista merita di conoscere i propri superpoteri.</strong></p>
+                
+                <a href="https://canzonify.com" target="_blank" class="about-cta">→ Scopri di più su Canzonify.com</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Form Section -->
+    <section class="form-section" id="form">
+        <div class="container">
+            <h2 class="section-title" style="color: var(--dark); margin-bottom: 20px;">Inizia Il Test</h2>
+            <p class="section-subtitle" style="color: var(--gray);">7 minuti che possono cambiare la tua carriera artistica</p>
+            
+            <div class="form-container">
+                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSchl7KWqJJaiG-DORB0msKEl3xGxv845eT3kfVjVV6NKsWbNw/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0">Caricamento…</iframe>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>CanzoniFy</h3>
+                <p>Scopri la tua identità artistica unica e lavora con strategia, non a caso.</p>
+                <div class="trust-badges">
+                    <div class="badge">🔒 Privacy-First</div>
+                    <div class="badge">📊 Basato su MBTI</div>
+                    <div class="badge">🚫 Zero Spam</div>
+                    <div class="badge">🎁 100% Gratuito</div>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Link Utili</h3>
+                <ul class="footer-links">
+                    <li><a href="https://canzonify.com" target="_blank">Sito Ufficiale</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="#form">Inizia il Test</a></li>
+                    <li><a href="mailto:canzonify@gmail.com">Contattaci</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Seguici</h3>
+                <p>Unisciti alla community di artisti che hanno scoperto la loro identità.</p>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/canzonify/" target="_blank" class="social-link" title="Instagram">
+                        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                        </svg>
+                    </a>
+                    <a href="https://www.tiktok.com/@canzonify_ita" target="_blank" class="social-link" title="TikTok">
+                        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+                        </svg>
+                    </a>
+                    <a href="https://www.facebook.com/share/19kE7QpSnE/" target="_blank" class="social-link" title="Facebook">
+                        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>© 2025 CanzoniFy • Made with 💜 for Artists</p>
+        </div>
+    </footer>
+    
+    <!-- Modal -->
+    <div class="modal" id="personalityModal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()">&times;</button>
+            <img id="modalImg" src="" alt="" class="modal-img">
+            <div class="modal-type" id="modalType"></div>
+            <h2 class="modal-name" id="modalName"></h2>
+            <div class="modal-cta">
+                <a href="#form" class="cta-button" onclick="closeModal()">Scopri se sei tu →</a>
+            </div>
+        </div>
     </div>
+    
+    <script>
+        // Dati delle 32 personalità con link Drive
+        const personalities = [
+            { type: "ENFJ-A", name: "Il Mentore Magnetico", imageId: "1CpP7u2n6H2pl_I1SswPtdQ0iRAxN6O8D" },
+            { type: "ENFJ-T", name: "Il Salvatore Esaurito", imageId: "1bs3QmNVCXzQx1arfThDdx9FqK5_RmeJy" },
+            { type: "ENFP-A", name: "Il Camaleonte Visionario", imageId: "19HX4OQ-OAvmTxBEtw4H9VE2tLQzJX_oc" },
+            { type: "ENFP-T", name: "Il Vulcano Creativo in Burnout", imageId: "1PNbuDye3YzVQemhOtcU_6ljDwRH7u9W7" },
+            { type: "ENTJ-A", name: "L'Imperatore Spietato", imageId: "1uO3Q598ZvC-MZdIZH2DHPbqnVFddlNtQ" },
+            { type: "ENTJ-T", name: "Il Generale Ansioso", imageId: "1qHnK8uLATRHlotYGSm58MQBZaVOz_sFn" },
+            { type: "ENTP-A", name: "L'Innovatore Provocatore", imageId: "1MF_RAqqy8XIZrpZH-Gh-m6jReW_AaF3-" },
+            { type: "ENTP-T", name: "Il Caos Creativo Disperso", imageId: "1JYFpP1Ob0DJ5ywCmOBdTQIZaux-4rYt3" },
+            { type: "ESFJ-A", name: "Il Collante Sociale", imageId: "14hwVB25MIDJ9hE69T-krBzSSUXu66vI6" },
+            { type: "ESFJ-T", name: "Il People Pleaser Prosciugato", imageId: "1V080vYJEXsoOGXUKRkFiFg63BWx2v1rG" },
+            { type: "ESFP-A", name: "La Gioia Incarnata", imageId: "1Yrpue6YoICtsB73pOINBlm-vtJRDpR6k" },
+            { type: "ESFP-T", name: "La Festa che Crolla", imageId: "1p2v7q4o5pb1IJKDJWt2zJpZkUnE4j7Eb" },
+            { type: "ESTJ-A", name: "Il CEO Inarrestabile", imageId: "1cd3QXM7-fZjkGhOHhWLpadrcnRolUggn" },
+            { type: "ESTJ-T", name: "Il Sergente Stressato", imageId: "1RpeOBrs7TJQL5wh7Vgvbqhz6N9B8vzPC" },
+            { type: "ESTP-A", name: "L'Adrenalina Fluida", imageId: "1yta_OXYIbL2XUexUzsmpxjuMAvKjgV9a" },
+            { type: "ESTP-T", name: "L'Adrenalina Junkie Insicura", imageId: "123omC6BBSTmmTkK6Fee0baX9TcCDEWpn" },
+            { type: "INFJ-A", name: "Il Poeta Mistico Silenzioso", imageId: "1nh7C-IoXZGVyjVdoBxaEHfwrPISkmwWQ" },
+            { type: "INFJ-T", name: "Lo Sciamano Bloccato", imageId: "1GgqX6TOCCo9NhKlEivPEtjYMUuqZ1ZOh" },
+            { type: "INFP-A", name: "L'Idealista Sognatore Radicale", imageId: "1AXHHGBEnzwT_OGh-YfWrIZQtxzQY6G1N" },
+            { type: "INFP-T", name: "La Fiamma che Crolla", imageId: "108BBOIjXpVjd7uCzpiJn3V4QZ38yPYXA" },
+            { type: "INTJ-A", name: "Il Mastermind Implacabile", imageId: "13g2zuRit0TqYL_M047Xs-CPPUxwhmPpF" },
+            { type: "INTJ-T", name: "L'Architetto Paralizzato", imageId: "1qnlzIXbTP8SWEpplj7DJtqdiKKhDrQaR" },
+            { type: "INTP-A", name: "Il Genio Tecnico Freddo", imageId: "1wCjue_0XsLOwmk4UWbekKS7J-S5y7lD9" },
+            { type: "INTP-T", name: "Lo Scienziato Pazzo Ansioso", imageId: "1201kYsqEOd4iDdLox6rvCQgrlQAv86qB" },
+            { type: "ISFJ-A", name: "La Roccia", imageId: "1uGLecoyQhgTVSQ-CG6umA4wlfvVlXlQU" },
+            { type: "ISFJ-T", name: "Il Doormat Invisibile", imageId: "1ooK1XP8O3IBP_ivwFF6PjFSHHCLNAZHa" },
+            { type: "ISFP-A", name: "L'Eremita", imageId: "1VkEVdmGj5rIDYV07ZALQ2XJuQFZNv5qS" },
+            { type: "ISFP-T", name: "La Farfalla Schiacciata", imageId: "1IDqJjJGIo_h9GkV0apXZ98qheTUeaxBa" },
+            { type: "ISTJ-A", name: "La Macchina da Guerra Affidabile", imageId: "1fWMEscDR_Itf1G0MdtJw9L2IMen4rZex" },
+            { type: "ISTJ-T", name: "Il Robot Perfezionista", imageId: "1MnhKKAu_xKYmli2EqaHwns1EQTmqL9KB" },
+            { type: "ISTP-A", name: "Il Virtuoso Stoico", imageId: "1AkFkz6JlE4W6WeBGqa7y2vbnPZute1Md" },
+            { type: "ISTP-T", name: "L'Artigiano Solitario Tormentato dalla Paura", imageId: "1nQ5GTA1p_GviKWJwh6SQDVoOzhXgCafr" }
+        ];
+        
+        // Genera gallery slider (duplica per effetto infinito)
+        function generateGallery() {
+            const slider = document.getElementById('gallerySlider');
+            const cards = personalities.map(p => `
+                <div class="personality-card" onclick="openModal('${p.type}', '${p.name}', '${p.imageId}')">
+                    <img src="https://drive.google.com/uc?export=view&id=${p.imageId}" 
+                         alt="${p.name}" 
+                         class="personality-img"
+                         loading="lazy">
+                    <div class="personality-type">${p.type}</div>
+                    <div class="personality-name">${p.name}</div>
+                </div>
+            `).join('');
+            
+            // Duplica le cards per effetto loop infinito
+            slider.innerHTML = cards + cards;
+        }
+        
+        // Modal
+        function openModal(type, name, imageId) {
+            const modal = document.getElementById('personalityModal');
+            document.getElementById('modalType').textContent = type;
+            document.getElementById('modalName').textContent = name;
+            document.getElementById('modalImg').src = `https://drive.google.com/uc?export=view&id=${imageId}`;
+            document.getElementById('modalImg').alt = name;
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeModal() {
+            const modal = document.getElementById('personalityModal');
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+        
+        // Chiudi modal con ESC
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeModal();
+        });
+        
+        // Chiudi modal cliccando fuori
+        document.getElementById('personalityModal').addEventListener('click', (e) => {
+            if (e.target.id === 'personalityModal') closeModal();
+        });
+        
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                const isActive = item.classList.contains('active');
+                
+                // Chiudi tutti gli altri
+                document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+                
+                // Toggle quello cliccato
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
+        
+        // Scroll Animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('.scroll-fade').forEach(el => observer.observe(el));
+        
+        // Particles Effect
+        function createParticles() {
+            const particles = document.getElementById('particles');
+            const particleCount = 20;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.top = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 6 + 's';
+                particle.style.animationDuration = (Math.random() * 4 + 4) + 's';
+                particles.appendChild(particle);
+            }
+        }
+        
+        // Smooth scroll per anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#' && document.querySelector(href)) {
+                    e.preventDefault();
+                    document.querySelector(href).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Init
+        document.addEventListener('DOMContentLoaded', () => {
+            generateGallery();
+            createParticles();
+        });
+    </script>
 </body>
 </html>

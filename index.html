@@ -1223,11 +1223,11 @@
             const slider = document.getElementById('gallerySlider');
             const baseUrl = 'https://canzonify.github.io/canzonifyTest/';
             
+            // Crea le card senza problemi di encoding
             const cards = personalities.map((p, index) => `
                 <div class="personality-card" 
                      data-index="${index}"
-                     data-type="${p.type}"
-                     title="${funFacts[p.type] || ''}">
+                     data-type="${p.type}">
                     <img src="${baseUrl}${p.imageFile}" 
                          alt="${p.name}" 
                          class="personality-img"
@@ -1240,24 +1240,20 @@
             // Duplica le cards per effetto loop infinito
             slider.innerHTML = cards + cards;
             
-            // Aggiungi event listeners
-            addCardListeners();
+            // Usa event delegation sul parent
+            slider.addEventListener('click', function(e) {
+                const card = e.target.closest('.personality-card');
+                if (card) {
+                    const index = parseInt(card.getAttribute('data-index'));
+                    if (!isNaN(index) && personalities[index]) {
+                        const p = personalities[index];
+                        openModal(p.type, p.name, p.imageFile);
+                    }
+                }
+            });
             
             // Aggiungi tooltip personalizzati
             addTooltips();
-        }
-        
-        // Event listeners per le card
-        function addCardListeners() {
-            document.querySelectorAll('.personality-card').forEach(card => {
-                card.addEventListener('click', function() {
-                    const index = parseInt(this.getAttribute('data-index'));
-                    const personality = personalities[index];
-                    if (personality) {
-                        openModal(personality.type, personality.name, personality.imageFile);
-                    }
-                });
-            });
         }
         
         // Modal con confetti

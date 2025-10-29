@@ -511,15 +511,40 @@
             max-width: 800px;
             margin: 0 auto;
             background: var(--white);
-            border-radius: 20px;
-            padding: 40px;
+            border-radius: 30px;
+            padding: 50px;
             box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+            animation: slideUp 0.8s ease-out;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .form-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
+        }
+        
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
         
         .form-container iframe {
             border: none;
             width: 100%;
             min-height: 1000px;
+            border-radius: 15px;
         }
         
         /* Footer */
@@ -1007,10 +1032,37 @@
     <!-- Form Section -->
     <section class="form-section" id="form">
         <div class="container">
-            <h2 class="section-title" style="color: var(--dark); margin-bottom: 20px;">Inizia Il Test</h2>
-            <p class="section-subtitle" style="color: var(--gray);">7 minuti che possono cambiare la tua carriera artistica</p>
+            <div class="form-header" style="text-align: center; margin-bottom: 50px;">
+                <h2 class="section-title" style="color: var(--dark); margin-bottom: 20px;">Inizia Il Test</h2>
+                <p class="section-subtitle" style="color: var(--gray); font-size: 1.2rem; margin-bottom: 30px;">
+                    7 minuti che possono cambiare la tua carriera artistica
+                </p>
+                
+                <div style="display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; margin-bottom: 40px;">
+                    <div style="text-align: center;">
+                        <div style="font-size: 2rem; margin-bottom: 10px;">⏱️</div>
+                        <div style="font-weight: 600; color: var(--primary);">7 Minuti</div>
+                        <div style="font-size: 0.9rem; color: var(--gray);">Tempo richiesto</div>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="font-size: 2rem; margin-bottom: 10px;">📧</div>
+                        <div style="font-weight: 600; color: var(--primary);">30 Secondi</div>
+                        <div style="font-size: 0.9rem; color: var(--gray);">Report via email</div>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="font-size: 2rem; margin-bottom: 10px;">🔒</div>
+                        <div style="font-weight: 600; color: var(--primary);">100% Privato</div>
+                        <div style="font-size: 0.9rem; color: var(--gray);">Privacy garantita</div>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="font-size: 2rem; margin-bottom: 10px;">✨</div>
+                        <div style="font-weight: 600; color: var(--primary);"><span id="formCounter">1247</span> artisti</div>
+                        <div style="font-size: 0.9rem; color: var(--gray);">L'hanno già fatto</div>
+                    </div>
+                </div>
+            </div>
             
-            <div class="form-container">
+            <div class="form-container scroll-fade">
                 <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSchl7KWqJJaiG-DORB0msKEl3xGxv845eT3kfVjVV6NKsWbNw/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0">Caricamento…</iframe>
             </div>
         </div>
@@ -1385,12 +1437,17 @@
         // Counter dinamico
         function startCounter() {
             const counterElement = document.getElementById('trustCounter');
-            if (counterElement) {
-                setInterval(() => {
-                    trustCounter += Math.floor(Math.random() * 3) + 1;
+            const formCounterElement = document.getElementById('formCounter');
+            
+            setInterval(() => {
+                trustCounter += Math.floor(Math.random() * 3) + 1;
+                if (counterElement) {
                     counterElement.textContent = trustCounter.toLocaleString('it-IT');
-                }, 8000);
-            }
+                }
+                if (formCounterElement) {
+                    formCounterElement.textContent = trustCounter.toLocaleString('it-IT');
+                }
+            }, 8000);
         }
         
         // Init

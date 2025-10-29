@@ -1223,9 +1223,9 @@
             const slider = document.getElementById('gallerySlider');
             const baseUrl = 'https://canzonify.github.io/canzonifyTest/';
             
-            const cards = personalities.map(p => `
+            const cards = personalities.map((p, index) => `
                 <div class="personality-card" 
-                     onclick="openModal('${p.type}', '${p.name.replace(/'/g, "\\'")}', '${p.imageFile}')"
+                     data-index="${index}"
                      data-type="${p.type}"
                      title="${funFacts[p.type] || ''}">
                     <img src="${baseUrl}${p.imageFile}" 
@@ -1240,8 +1240,24 @@
             // Duplica le cards per effetto loop infinito
             slider.innerHTML = cards + cards;
             
+            // Aggiungi event listeners
+            addCardListeners();
+            
             // Aggiungi tooltip personalizzati
             addTooltips();
+        }
+        
+        // Event listeners per le card
+        function addCardListeners() {
+            document.querySelectorAll('.personality-card').forEach(card => {
+                card.addEventListener('click', function() {
+                    const index = parseInt(this.getAttribute('data-index'));
+                    const personality = personalities[index];
+                    if (personality) {
+                        openModal(personality.type, personality.name, personality.imageFile);
+                    }
+                });
+            });
         }
         
         // Modal con confetti

@@ -781,92 +781,6 @@
             transform: translateY(0);
         }
         
-        /* Music Control */
-        .music-control {
-            position: fixed;
-            top: 30px;
-            right: 30px;
-            z-index: 999;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border-radius: 50px;
-            padding: 12px 20px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            transition: all 0.3s ease;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-        
-        .music-control:hover {
-            background: rgba(255, 255, 255, 0.15);
-            transform: translateY(-2px);
-        }
-        
-        .music-toggle {
-            background: none;
-            border: none;
-            color: var(--white);
-            cursor: pointer;
-            font-size: 1.2rem;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            padding: 0;
-            transition: transform 0.3s ease;
-        }
-        
-        .music-toggle:hover {
-            transform: scale(1.1);
-        }
-        
-        .music-toggle span {
-            font-size: 0.9rem;
-            font-weight: 600;
-        }
-        
-        .volume-control {
-            width: 80px;
-            height: 4px;
-            -webkit-appearance: none;
-            appearance: none;
-            background: rgba(255, 255, 255, 0.3);
-            border-radius: 10px;
-            outline: none;
-            transition: all 0.3s ease;
-        }
-        
-        .volume-control::-webkit-slider-thumb {
-            -webkit-appearance: none;
-            appearance: none;
-            width: 14px;
-            height: 14px;
-            background: var(--secondary);
-            border-radius: 50%;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        .volume-control::-webkit-slider-thumb:hover {
-            transform: scale(1.2);
-            box-shadow: 0 0 10px var(--secondary);
-        }
-        
-        .volume-control::-moz-range-thumb {
-            width: 14px;
-            height: 14px;
-            background: var(--secondary);
-            border-radius: 50%;
-            cursor: pointer;
-            border: none;
-            transition: all 0.3s ease;
-        }
-        
-        .volume-control::-moz-range-thumb:hover {
-            transform: scale(1.2);
-            box-shadow: 0 0 10px var(--secondary);
-        }
-        
         /* Bonus PDF Section */
         .bonus-section {
             background: rgba(255, 255, 255, 0.05);
@@ -950,20 +864,6 @@
         }
         
         @media (max-width: 768px) {
-            .music-control {
-                top: 15px;
-                right: 15px;
-                padding: 10px 15px;
-            }
-            
-            .volume-control {
-                width: 60px;
-            }
-            
-            .music-toggle span {
-                display: none;
-            }
-            
             .bonus-section {
                 padding: 30px 20px;
                 margin: 0 20px 60px;
@@ -980,21 +880,6 @@
     </style>
 </head>
 <body>
-    <!-- Music Control -->
-    <div class="music-control">
-        <button class="music-toggle" id="musicToggle">
-            <span id="musicIcon">🎵</span>
-            <span id="musicStatus">Play</span>
-        </button>
-        <input type="range" class="volume-control" id="volumeSlider" min="0" max="100" value="30">
-    </div>
-    
-    <!-- Audio Element (hidden) -->
-    <audio id="bgMusic" loop>
-        <source src="https://cdn.pixabay.com/audio/2022/03/10/audio_4e3f4b6e18.mp3" type="audio/mpeg">
-        <!-- Lofi track "Lofi Study" by Lemon Music Studio - Royalty Free from Pixabay -->
-    </audio>
-    
     <!-- Hero Section -->
     <section class="hero">
         <div class="particles" id="particles"></div>
@@ -1239,38 +1124,6 @@
         </div>
     </section>
     
-    <!-- Bonus PDF Section -->
-    <section class="section">
-        <div class="container">
-            <div class="bonus-section scroll-fade">
-                <div class="bonus-content">
-                    <span class="bonus-tag">💡 BONUS: Dopo Il Test</span>
-                    
-                    <h2 class="bonus-title">Sblocca la Guida Collaborazioni & Opportunità</h2>
-                    
-                    <p class="bonus-description">
-                        Scopri come aprire porte a:
-                    </p>
-                    
-                    <ul class="bonus-list">
-                        <li>Collaborazioni studio</li>
-                        <li>Booking live</li>
-                        <li>Progetti discografici</li>
-                    </ul>
-                    
-                    <p class="bonus-description">
-                        Con script pronti per DM, Email, Pitch
-                    </p>
-                    
-                    <p class="bonus-note">
-                        Condividi risultato → PDF gratis<br>
-                        (Dettagli via email 📧)
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-    
     <!-- Form Section -->
     <section class="form-section" id="form">
         <div class="container">
@@ -1306,6 +1159,38 @@
             
             <div class="form-container scroll-fade">
                 <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSchl7KWqJJaiG-DORB0msKEl3xGxv845eT3kfVjVV6NKsWbNw/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0">Caricamento…</iframe>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Bonus PDF Section -->
+    <section class="section">
+        <div class="container">
+            <div class="bonus-section scroll-fade">
+                <div class="bonus-content">
+                    <span class="bonus-tag">💡 BONUS: Dopo Il Test</span>
+                    
+                    <h2 class="bonus-title">Sblocca la Guida Collaborazioni & Opportunità</h2>
+                    
+                    <p class="bonus-description">
+                        Scopri come aprire porte a:
+                    </p>
+                    
+                    <ul class="bonus-list">
+                        <li>Collaborazioni studio</li>
+                        <li>Booking live</li>
+                        <li>Progetti discografici</li>
+                    </ul>
+                    
+                    <p class="bonus-description">
+                        Con script pronti per DM, Email, Pitch
+                    </p>
+                    
+                    <p class="bonus-note">
+                        Condividi risultato → PDF gratis<br>
+                        (Dettagli via email 📧)
+                    </p>
+                </div>
             </div>
         </div>
     </section>
@@ -1704,49 +1589,11 @@
             }, 8000);
         }
         
-        // Music Control
-        function initMusicControl() {
-            const music = document.getElementById('bgMusic');
-            const toggle = document.getElementById('musicToggle');
-            const status = document.getElementById('musicStatus');
-            const icon = document.getElementById('musicIcon');
-            const volumeSlider = document.getElementById('volumeSlider');
-            
-            if (!music || !toggle) return;
-            
-            // Set default volume
-            music.volume = 0.3;
-            
-            // Toggle play/pause
-            toggle.addEventListener('click', () => {
-                if (music.paused) {
-                    music.play().then(() => {
-                        status.textContent = 'Pause';
-                        icon.textContent = '🎶';
-                    }).catch(err => {
-                        console.log('Audio play failed:', err);
-                    });
-                } else {
-                    music.pause();
-                    status.textContent = 'Play';
-                    icon.textContent = '🎵';
-                }
-            });
-            
-            // Volume control
-            if (volumeSlider) {
-                volumeSlider.addEventListener('input', (e) => {
-                    music.volume = e.target.value / 100;
-                });
-            }
-        }
-        
         // Init
         document.addEventListener('DOMContentLoaded', () => {
             generateGallery();
             createParticles();
             startCounter();
-            initMusicControl();
             
             // Easter egg: click sul logo
             document.querySelector('.logo').addEventListener('click', (e) => {

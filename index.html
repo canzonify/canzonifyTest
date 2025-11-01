@@ -949,17 +949,37 @@
 /* Mobile */
 @media (max-width: 768px) {
     .floating-cta {
-        width: 60px;
-        height: 60px;
+        width: auto;
+        height: auto;
         bottom: 20px;
         right: 20px;
+        left: 20px;
+        border-radius: 50px;
+        padding: 15px 25px;
+        flex-direction: row;
+        justify-content: center;
+        gap: 10px;
     }
     
     .cta-icon {
-        font-size: 28px;
+        font-size: 24px;
+        display: inline-block;
     }
     
     .cta-tooltip {
+        position: static;
+        opacity: 1;
+        transform: none;
+        background: transparent;
+        color: white;
+        padding: 0;
+        box-shadow: none;
+        font-size: 16px;
+        font-weight: 700;
+        white-space: nowrap;
+    }
+    
+    .cta-tooltip::after {
         display: none;
     }
 }    </style>
@@ -1688,10 +1708,8 @@
         });
     </script>
 <!-- Floating CTA Button -->
-    <a href="#form" class="floating-cta">
-        <span class="cta-icon">🎯</span>
-        <span class="cta-tooltip">Inizia il Test Gratis!</span>
-    </a>
-
-</body>
+<a href="#form" class="floating-cta">
+    <span class="cta-icon">🎯</span>
+    <span class="cta-tooltip">Fai il Test!</span>
+</a></body>
 </html>
